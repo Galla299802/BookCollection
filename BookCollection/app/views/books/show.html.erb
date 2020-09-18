@@ -1,0 +1,35 @@
+<% if !flash[:notice].blank?%>
+    <div class="notice">
+        <%= flash[:notice]%>
+    </div>
+<%end %>
+
+<h1>Show Details</h1></br>
+<%= link_to('Back to Home page', {:action => 'index'})%>
+
+<div class="Book show">
+    <h2>Show Book</h2>
+    
+    <table summary="Book detailed view">
+        <tr>
+            <th>Title</th>
+            <td><%=@book.title%></td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td><%=@book.author%></td>
+        </tr>
+        <tr>
+            <th>Genre</th>
+            <td><%=@book.genre%></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td><%=@book.price%></td>
+        </tr>
+        <tr>
+            <th>Published-date</th>
+            <td><%=@book.publishedDate%></td>
+        </tr>
+    </table>
+</div>

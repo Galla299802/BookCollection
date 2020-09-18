@@ -1,0 +1,36 @@
+<h1>Add a New Book</h1></br>
+<%= link_to('Back to Home page', {:action => 'index'})%>
+
+<div class="book new">
+    <h2>Create new Book</h2>
+
+    <%= form_for(@book) do |f| %>
+        <table summary="Book for fields">
+            <tr>
+                <th>Title</th>
+                <td><%=f.text_field(:title) %></td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><%=f.text_field(:author) %></td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td><%=f.text_field(:genre) %></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><%=f.number_field(:price, step: 0.01) %></td>
+            </tr>
+            <tr>
+                <th>Published-Date</th>
+                <td><%=f.date_field(:publishedDate) %></td>
+            </tr>
+        </table>
+
+        <div class ="form buttons">
+        <%= f.submit("Create Book")%>
+        </div>
+    <% end %>
+</div>
+
